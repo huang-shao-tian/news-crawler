@@ -17,10 +17,14 @@ celery_app.conf.update(
 
 @celery_app.task
 def crawl_news_task(url: str):
+    print(f"Starting to crawl: {url}") 
+
     try:
         from motor.motor_asyncio import AsyncIOMotorClient
         import asyncio
         from .services.crawler import crawl_article
+        import lxml_html_clean
+
         
         client = AsyncIOMotorClient(settings.MONGODB_URL)
         db = client[settings.NEWS_DB]

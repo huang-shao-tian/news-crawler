@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     NEWS_DB: str
     
     NEWS_SOURCES: dict = {
-        "udn": "https://udn.com",
+        "udn": "https://udn.com/news/story/7470/7645646",
         "chinatimes": "https://www.chinatimes.com",
         "bbc": "https://www.bbc.com"
     }
